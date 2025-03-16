@@ -10,8 +10,12 @@ export default function Home() {
         next stadistics
       </p>
 
-      {/* <Chart /> */}
-
+      <a
+        href='/one-piece'
+        className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
+      >
+        One Piece Statistics
+      </a>
       <Arcs />
     </div>
   );
