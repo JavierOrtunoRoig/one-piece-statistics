@@ -11,7 +11,11 @@ import {
 } from 'chart.js';
 import onePace from '@/assets/one_pace.json';
 import onePiece from '@/assets/one_piece.json';
-import { getTime } from '@/helpers/time';
+import {
+  getAllArcsChartInformation,
+  getAllSagasChartInformation,
+  getTime,
+} from '@/helpers/time';
 
 // Registrar elementos necesarios para Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -40,41 +44,26 @@ interface PieChartProps {
 
 const PieChart: FC<PieChartProps> = ({ chartId, serie, arc }) => {
   const serieToAnalyse: Serie = serie === 'One Piece' ? onePiece : onePace;
-  const sagasWithArcs = Object.entries(serieToAnalyse).map(
-    ([sagaName, arcs]) => {
-      return {
-        title: sagaName,
-        duration: Object.entries(arcs).map(([arcName, episodes]) => {
-          return {
-            title: arcName,
-            duration: episodes.reduce((sum, ep) => sum + ep.duration, 0),
-          };
-        }),
-      };
-    },
-  );
 
-  const sagasDurations = sagasWithArcs
-    .map((saga) => {
-      return {
-        title: saga.title,
-        duration: saga.duration.reduce((sum, arc) => sum + arc.duration, 0),
-      };
-    })
-    .sort((a, b) => b.duration - a.duration);
+  let labels: string[] = [];
+  let data: number[] = [];
 
-  const selectedArc = sagasWithArcs.find((saga) => saga.title === arc);
-  const arcDurations =
-    selectedArc?.duration
-      .sort((a, b) => b.duration - a.duration)
-      .map((arc) => arc.duration) || [];
-  const arcLabels =
-    selectedArc?.duration
-      .sort((a, b) => b.duration - a.duration)
-      .map((arc) => arc.title) || [];
+  if (!arc) {
+    const sagasChartInformation = getAllSagasChartInformation(
+      serieToAnalyse,
+    ).sort((a, b) => b.duration - a.duration);
 
-  const labels = arc ? arcLabels : sagasDurations.map((arc) => arc.title);
-  const data = arc ? arcDurations : sagasDurations.map((arc) => arc.duration);
+    labels = sagasChartInformation.map((saga) => saga.label);
+    data = sagasChartInformation.map((saga) => saga.duration);
+  } else {
+    const arcChartInformation = getAllArcsChartInformation(
+      serieToAnalyse,
+      arc,
+    ).sort((a, b) => b.duration - a.duration);
+    labels = arcChartInformation.map((arc) => arc.label);
+    data = arcChartInformation.map((arc) => arc.duration);
+  }
+
   const chartData = {
     labels: labels,
     datasets: [

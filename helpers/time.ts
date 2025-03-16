@@ -71,3 +71,22 @@ export const getSerieTotalTime = (videos: Serie): number =>
     (total, saga) => total + getSagaTotalTime(saga),
     0,
   );
+
+export const getAllSagasChartInformation = (
+  videos: Serie,
+): { label: string; duration: number }[] => {
+  return Object.entries(videos).map(([sagaName, arcs]) => {
+    const sagaTotalTime = getSagaTotalTime(arcs);
+    return { label: sagaName, duration: sagaTotalTime };
+  });
+};
+
+export const getAllArcsChartInformation = (
+  serie: Serie,
+  arcName: string,
+): { label: string; duration: number }[] => {
+  return Object.entries(serie[arcName]).map(([arc, episodes]) => {
+    const arcTotalTime = getArcTotalTime(episodes);
+    return { label: arc, duration: arcTotalTime };
+  });
+};
