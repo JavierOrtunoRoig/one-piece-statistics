@@ -3,12 +3,13 @@ import onePiece from '@/assets/one_piece.json';
 import Display from '@/components/Display';
 
 interface PageProps {
-  searchParams: {
+  searchParams: Promise<{
     chartType?: 'pie' | 'bar';
-  };
+  }>;
 }
 
-const Page = async ({ searchParams }: PageProps) => {
+const Page = async (props: PageProps) => {
+  const searchParams = await props.searchParams;
   const chartType = searchParams?.chartType || 'pie';
 
   return <Display serie={onePiece} label='One Piece' chartType={chartType} />;
