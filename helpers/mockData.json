@@ -1,0 +1,218 @@
+{
+  "1. East Blue": {
+    "1.1. Romance Dawn": [
+      {
+        "title": "Romance Dawn 01",
+        "duration": 1077.42,
+        "watched": true
+      },
+      {
+        "title": "Romance Dawn 02",
+        "duration": 1259.56,
+        "watched": false
+      },
+      {
+        "title": "Romance Dawn 03",
+        "duration": 1654.38,
+        "watched": false
+      },
+      {
+        "title": "Romance Dawn 04",
+        "duration": 1078.16,
+        "watched": true
+      }
+    ],
+    "1.2. Orange Town": [
+      {
+        "title": "Orange Town 01",
+        "duration": 1672.5,
+        "watched": false
+      },
+      {
+        "title": "Orange Town 02",
+        "duration": 2211.63,
+        "watched": true
+      },
+      {
+        "title": "Orange Town 03",
+        "duration": 1312.58,
+        "watched": false
+      }
+    ]
+  },
+  "2. Arabasta": {
+    "2.1. Reverse Mountain": [
+      {
+        "title": "Reverse Mountain 01",
+        "duration": 1226.99,
+        "watched": false
+      },
+      {
+        "title": "Reverse Mountain 02",
+        "duration": 1988.95,
+        "watched": false
+      }
+    ]
+  },
+  "3. Sky Island": {
+    "3.1. Jaya": [
+      {
+        "title": "Jaya 01",
+        "duration": 1263.55,
+        "watched": true
+      },
+      {
+        "title": "Jaya 02",
+        "duration": 1955.12,
+        "watched": false
+      },
+      {
+        "title": "Jaya 03",
+        "duration": 1205.66,
+        "watched": false
+      },
+      {
+        "title": "Jaya 04",
+        "duration": 1203.58,
+        "watched": false
+      },
+      {
+        "title": "Jaya 05",
+        "duration": 1297.46,
+        "watched": true
+      },
+      {
+        "title": "Jaya 06",
+        "duration": 1033.99,
+        "watched": false
+      },
+      {
+        "title": "Jaya 07",
+        "duration": 1481.44,
+        "watched": false
+      },
+      {
+        "title": "Jaya 08",
+        "duration": 1146.41,
+        "watched": false
+      }
+    ],
+    "3.2. Skypiea": [
+      {
+        "title": "Skypiea 01",
+        "duration": 1196.57,
+        "watched": true
+      },
+      {
+        "title": "Skypiea 02",
+        "duration": 1261.05,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 03",
+        "duration": 1470.59,
+        "watched": true
+      },
+      {
+        "title": "Skypiea 04",
+        "duration": 1753.63,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 05",
+        "duration": 1399.23,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 06",
+        "duration": 2061.72,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 07",
+        "duration": 1230.23,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 08",
+        "duration": 2215.71,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 09",
+        "duration": 2095.13,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 10",
+        "duration": 1137.34,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 11",
+        "duration": 1945.78,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 12",
+        "duration": 1704.77,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 13",
+        "duration": 1989.87,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 14",
+        "duration": 1741.24,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 15",
+        "duration": 2171.56,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 16",
+        "duration": 1597.97,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 17",
+        "duration": 1896.11,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 18",
+        "duration": 2024.09,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 19",
+        "duration": 1702.76,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 20",
+        "duration": 1426.01,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 21",
+        "duration": 1764.76,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 22",
+        "duration": 1975.4,
+        "watched": false
+      },
+      {
+        "title": "Skypiea 23",
+        "duration": 1213.0,
+        "watched": false
+      }
+    ]
+  }
+}

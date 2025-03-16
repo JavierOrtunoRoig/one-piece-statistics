@@ -1,12 +1,12 @@
-import { flatMapDeep } from "lodash-es";
+import { flatMapDeep } from 'lodash-es';
 
 type TimeOptions = {
-  type: "long" | "short";
+  type: 'long' | 'short';
 };
 
 export const getTime = (
   duration: number,
-  { type }: TimeOptions = { type: "long" },
+  { type }: TimeOptions = { type: 'long' },
 ) => {
   const seconds = Math.trunc(duration % 60);
   let minutes = Math.trunc(duration / 60);
@@ -16,9 +16,9 @@ export const getTime = (
     minutes = Math.trunc(minutes % 60);
   }
 
-  if (type === "long") {
+  if (type === 'long') {
     return `${
-      hours > 0 ? `${hours} hours, ` : ""
+      hours > 0 ? `${hours} hours, ` : ''
     }${minutes} minutes and ${seconds} seconds`;
   } else {
     return `${hours}h ${minutes}m ${seconds}s`;
@@ -60,7 +60,7 @@ export const getArcRemainingTime = (arc: object) => {
 export const getArcTotalTime = (arc: Episode[]) =>
   arc.reduce((arcSum, episodes) => arcSum + episodes.duration, 0);
 
-export const getSagaTotalTime = (saga: Serie) =>
+export const getSagaTotalTime = (saga: Arc) =>
   Object.values(saga).reduce(
     (sagaSum, arc) => sagaSum + getArcTotalTime(arc),
     0,
