@@ -82,7 +82,8 @@ const BarChart: FC<BarChartProps> = ({ chartId, serie, arc }) => {
         boxHeight: 12,
         callbacks: {
           label: (tooltipItem: TooltipItem<'bar'>) => {
-            const dataset = tooltipItem.dataset.data;
+            const dataset = tooltipItem.dataset.data as number[];
+            if (!dataset) throw new Error('Dataset not found');
             const total = dataset.reduce((acc, val) => acc + val, 0);
             const value = dataset[tooltipItem.dataIndex];
             const percentage = ((value / total) * 100).toFixed(2);
