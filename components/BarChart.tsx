@@ -18,7 +18,6 @@ import {
   getAllSagasChartInformation,
   getTime,
 } from '@/helpers/time';
-import { title } from 'process';
 
 // Registrar elementos necesarios para Chart.js
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
