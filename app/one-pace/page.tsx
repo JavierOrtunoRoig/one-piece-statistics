@@ -1,5 +1,5 @@
 import React from 'react';
-import onePiece from '@/assets/one_piece.json';
+import onePiece from '@/assets/one_pace.json';
 import Display from '@/components/Display';
 
 interface PageProps {
