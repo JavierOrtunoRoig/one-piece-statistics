@@ -1988,16 +1988,964 @@
         ]
     },
     "6. Summit War": {
-        "6.1. Sabaody Archipelago": [],
-        "6.2. Amazon Lily": [],
-        "6.3. Little East Blue": [],
-        "6.4. Impel Down": [],
-        "6.5. Marineford": [],
-        "6.6. Post-War": []
+        "6.1. Sabaody Archipelago": [
+            {
+                "title": "Piece - 0385",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0386",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0387",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0388",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0389",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0390",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0391",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0392",
+                "duration": 1440.01,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0393",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0394",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0395",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0396",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0397",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0398",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0399",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0400",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0401",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0402",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0403",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0404",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0405",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0406",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0407",
+                "duration": 1435.09,
+                "watched": false
+            }
+        ],
+        "6.2. Amazon Lily": [
+            {
+                "title": "Piece - 0408",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0409",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0410",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0411",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0412",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0413",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0414",
+                "duration": 1430.12,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0415",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0416",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0417",
+                "duration": 1435.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0418",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0419",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0420",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0421",
+                "duration": 1435.04,
+                "watched": false
+            }
+        ],
+        "6.3. Little East Blue": [
+            {
+                "title": "Piece - 0426",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0427",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0428",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0429",
+                "duration": 1435.04,
+                "watched": false
+            }
+        ],
+        "6.4. Impel Down": [
+            {
+                "title": "Piece - 0422",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0423",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0424",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0425",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0430",
+                "duration": 1434.99,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0431",
+                "duration": 1435.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0432",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0433",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0434",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0435",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0436",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0437",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0438",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0439",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0440",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0441",
+                "duration": 1435.09,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0442",
+                "duration": 1435.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0443",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0444",
+                "duration": 1435.04,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0445",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0446",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0447",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0448",
+                "duration": 1440.24,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0449",
+                "duration": 1440.15,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0450",
+                "duration": 1440.23,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0451",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0452",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0453",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0454",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0455",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0456",
+                "duration": 1440.13,
+                "watched": false
+            }
+        ],
+        "6.5. Marineford": [
+            {
+                "title": "Piece - 0457",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0458",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0459",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0460",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0461",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0462",
+                "duration": 1440.19,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0463",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0464",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0465",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0466",
+                "duration": 1440.19,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0467",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0468",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0469",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0470",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0471",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0472",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0473",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0474",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0475",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0476",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0477",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0478",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0479",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0480",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0481",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0482",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0483",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0484",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0485",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0486",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0487",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0488",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0489",
+                "duration": 1440.1,
+                "watched": false
+            }
+        ],
+        "6.6. Post-War": [
+            {
+                "title": "Piece - 0490",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0491",
+                "duration": 1435.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0493",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0494",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0495",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0496",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0497",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0498",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0499",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0500",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0501",
+                "duration": 1440.19,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0502",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0503",
+                "duration": 1440.15,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0504",
+                "duration": 1440.01,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0505",
+                "duration": 1440.11,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0506",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0507",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0508",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0509",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0510",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0511",
+                "duration": 1439.96,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0512",
+                "duration": 1440.01,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0513",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0514",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0515",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0516",
+                "duration": 1440.17,
+                "watched": false
+            }
+        ]
     },
     "7. Fish-Man": {
-        "7.1 Return to Sabaody": [],
-        "7.2. Fishman Island": []
+        "7.1 Return to Sabaody": [
+            {
+                "title": "Piece - 0517",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0518",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0519",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0520",
+                "duration": 1440.15,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0521",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0522",
+                "duration": 1440.13,
+                "watched": false
+            }
+        ],
+        "7.2. Fishman Island": [
+            {
+                "title": "Piece - 0523",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0524",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0525",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0526",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0527",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0528",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0529",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0530",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0531",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0532",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0533",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0534",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0535",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0536",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0537",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0538",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0539",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0540",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0541",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0543",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0544",
+                "duration": 1440.11,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0545",
+                "duration": 1440.17,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0546",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0547",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0548",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0549",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0550",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0551",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0552",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0553",
+                "duration": 1440.13,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0554",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0555",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0556",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0557",
+                "duration": 1440.11,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0558",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0559",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0560",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0561",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0562",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0563",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0564",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0565",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0566",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0567",
+                "duration": 1440.11,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0568",
+                "duration": 1440.06,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0569",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0570",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0571",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0572",
+                "duration": 1440.1,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0573",
+                "duration": 1440.11,
+                "watched": false
+            },
+            {
+                "title": "Piece - 0574",
+                "duration": 1440.1,
+                "watched": false
+            }
+        ]
     },
     "8. Dressrosa": {
         "8.1. Z's Ambition": [],
