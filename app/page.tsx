@@ -1,4 +1,5 @@
 import { Arcs } from '@/components/Arcs';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -10,12 +11,21 @@ export default function Home() {
         next stadistics
       </p>
 
-      <a
-        href='/one-piece'
-        className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-      >
-        One Piece Statistics
-      </a>
+      <div className='flex items-center justify-center gap-2 p-8'>
+        <Link
+          href='/one-piece'
+          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
+        >
+          One Piece Statistics
+        </Link>
+
+        <Link
+          href='/one-pace'
+          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
+        >
+          One Pace Statistics
+        </Link>
+      </div>
       <Arcs />
     </div>
   );

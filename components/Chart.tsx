@@ -1,18 +1,17 @@
 'use client';
 
 import React, { FC } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Pie } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
-  BarElement,
-  CategoryScale,
-  LinearScale,
+  ArcElement,
   Tooltip,
   Legend,
   TooltipItem,
+  BarElement,
+  CategoryScale,
+  LinearScale,
 } from 'chart.js';
-import onePace from '@/assets/one_pace.json';
-import onePiece from '@/assets/one_piece.json';
 import {
   getAllArcsChartInformation,
   getAllSagasChartInformation,
@@ -20,7 +19,6 @@ import {
 } from '@/helpers/time';
 
 // Registrar elementos necesarios para Chart.js
-ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const COLORS = [
   '#FF6384',
@@ -29,6 +27,7 @@ const COLORS = [
   '#4CAF50',
   '#9966FF',
   '#FF9F40',
+
   '#2ECC71',
   '#F39C12',
   '#8E44AD',
@@ -37,25 +36,34 @@ const COLORS = [
   '#3498DB',
 ];
 
-interface BarChartProps {
+interface PieChartProps {
   chartId: string;
-  serie: 'One Piece' | 'One Pace';
   arc?: string;
+  serieData: Serie;
+  type: 'PIE' | 'BAR';
 }
 
-const BarChart: FC<BarChartProps> = ({ chartId, serie, arc }) => {
-  const serieToAnalyse: Serie = serie === 'One Piece' ? onePiece : onePace;
-
+const Chart: FC<PieChartProps> = ({ chartId, arc, serieData, type }) => {
   let labels: string[] = [];
   let data: number[] = [];
 
+  if (type === 'PIE') {
+    ChartJS.register(ArcElement, Tooltip, Legend);
+  } else {
+    ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+  }
+
   if (!arc) {
-    const sagasChartInformation = getAllSagasChartInformation(serieToAnalyse);
+    const sagasChartInformation = getAllSagasChartInformation(serieData).sort(
+      (a, b) => b.duration - a.duration,
+    );
 
     labels = sagasChartInformation.map((saga) => saga.label);
     data = sagasChartInformation.map((saga) => saga.duration);
   } else {
-    const arcChartInformation = getAllArcsChartInformation(serieToAnalyse, arc);
+    const arcChartInformation = getAllArcsChartInformation(serieData, arc).sort(
+      (a, b) => b.duration - a.duration,
+    );
     labels = arcChartInformation.map((arc) => arc.label);
     data = arcChartInformation.map((arc) => arc.duration);
   }
@@ -74,16 +82,15 @@ const BarChart: FC<BarChartProps> = ({ chartId, serie, arc }) => {
   const options: any = {
     responsive: true,
     plugins: {
-      legend: { display: false },
+      legend: { position: 'top' },
       tooltip: {
         bodyFont: { size: 13 },
         boxPadding: 4,
         boxWidth: 12,
         boxHeight: 12,
         callbacks: {
-          label: (tooltipItem: TooltipItem<'bar'>) => {
-            const dataset = tooltipItem.dataset.data as number[];
-            if (!dataset) throw new Error('Dataset not found');
+          label: (tooltipItem: TooltipItem<'pie'>) => {
+            const dataset = tooltipItem.dataset.data;
             const total = dataset.reduce((acc, val) => acc + val, 0);
             const value = dataset[tooltipItem.dataIndex];
             const percentage = ((value / total) * 100).toFixed(2);
@@ -92,6 +99,9 @@ const BarChart: FC<BarChartProps> = ({ chartId, serie, arc }) => {
         },
       },
     },
+  };
+
+  const barOptions = {
     scales: {
       x: {
         ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 },
@@ -108,7 +118,15 @@ const BarChart: FC<BarChartProps> = ({ chartId, serie, arc }) => {
     },
   };
 
-  return <Bar id={chartId} data={chartData} options={options} />;
+  return type === 'PIE' ? (
+    <Pie id={chartId} data={chartData} options={options} />
+  ) : (
+    <Bar
+      id={chartId}
+      data={chartData}
+      options={{ ...options, ...barOptions }}
+    />
+  );
 };
 
-export default BarChart;
+export default Chart;

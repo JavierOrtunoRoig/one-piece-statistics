@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
-import BarChart from './BarChart';
-import PieChart from './PieChart';
+import Chart from './Chart';
 
 interface DisplayProps {
   serie: Serie;
@@ -43,21 +42,21 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
           {chartType === 'pie' ? 'Bar Chart' : 'Pie Chart'}
         </Link>
       </div>
-      <div className='flex w-full flex-wrap justify-center gap-4'>
-        <div className='w-5/12'>
+      <div className='flex w-full flex-wrap justify-center gap-6'>
+        <div className='w-full lg:w-5/12 xl:w-3/12'>
           {chartType === 'pie' ? (
-            <PieChart chartId='totalSagasHours' serie={label} />
+            <Chart chartId='totalSagasHours' serieData={serie} type='PIE' />
           ) : (
-            <BarChart chartId='totalSagasHours' serie={label} />
+            <Chart chartId='totalSagasHours' serieData={serie} type='BAR' />
           )}
         </div>
 
         {Object.keys(serie).map((arc) => (
-          <div key={arc} className='w-5/12'>
+          <div key={arc} className='w-full lg:w-5/12 xl:w-3/12'>
             {chartType === 'pie' ? (
-              <PieChart chartId={arc} serie={label} arc={arc} />
+              <Chart chartId={arc} serieData={serie} arc={arc} type='PIE' />
             ) : (
-              <BarChart chartId={arc} serie={label} arc={arc} />
+              <Chart chartId={arc} serieData={serie} arc={arc} type='BAR' />
             )}
           </div>
         ))}
