@@ -1,5 +1,5 @@
 import React from 'react';
-import onePiece from '@/assets/one_pace.json';
+import onePace from '@/assets/one_pace.json';
 import Display from '@/components/Display';
 
 interface PageProps {
@@ -12,7 +12,7 @@ const Page = async (props: PageProps) => {
   const searchParams = await props.searchParams;
   const chartType = searchParams?.chartType || 'pie';
 
-  return <Display serie={onePiece} label='One Pace' chartType={chartType} />;
+  return <Display serie={onePace} label='one-pace' chartType={chartType} />;
 };
 
 export default Page;

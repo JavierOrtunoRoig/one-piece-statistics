@@ -4,14 +4,14 @@ import Chart from './Chart';
 
 interface DisplayProps {
   serie: Serie;
-  label: 'One Piece' | 'One Pace';
+  label: 'one-piece' | 'one-pace' | 'comparation';
   chartType: 'bar' | 'pie';
 }
 
 const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
-  const anotherSerie = `/${label !== 'One Piece' ? 'one-piece' : 'one-pace'}`;
-  const currentSerie = `/${label === 'One Piece' ? 'one-piece' : 'one-pace'}`;
-  const anotherSerieLabel = label === 'One Piece' ? 'One Pace' : 'One Piece';
+  const anotherSerie = `/${label === 'one-piece' ? 'one-pace' : 'one-piece'}`;
+  const currentSerie = `/${label}`;
+  const anotherSerieLabel = label === 'one-piece' ? 'One Pace' : 'One Piece';
 
   return (
     <>
@@ -30,6 +30,13 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
           {anotherSerieLabel} Statistics
         </Link>
 
+        <Link
+          href={'/comparation'}
+          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
+        >
+          Comparation Statistics
+        </Link>
+
         {/* change chart type */}
         <Link
           href={
@@ -45,18 +52,40 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
       <div className='flex w-full flex-wrap justify-center gap-6'>
         <div className='w-full lg:w-5/12 xl:w-3/12'>
           {chartType === 'pie' ? (
-            <Chart chartId='totalSagasHours' serieData={serie} type='PIE' />
+            <Chart
+              chartId='totalSagasHours'
+              serieData={serie}
+              type='PIE'
+              comparation={label === 'comparation'}
+            />
           ) : (
-            <Chart chartId='totalSagasHours' serieData={serie} type='BAR' />
+            <Chart
+              chartId='totalSagasHours'
+              serieData={serie}
+              type='BAR'
+              comparation={label === 'comparation'}
+            />
           )}
         </div>
 
         {Object.keys(serie).map((arc) => (
           <div key={arc} className='w-full lg:w-5/12 xl:w-3/12'>
             {chartType === 'pie' ? (
-              <Chart chartId={arc} serieData={serie} arc={arc} type='PIE' />
+              <Chart
+                chartId={arc}
+                serieData={serie}
+                arc={arc}
+                type='PIE'
+                comparation={label === 'comparation'}
+              />
             ) : (
-              <Chart chartId={arc} serieData={serie} arc={arc} type='BAR' />
+              <Chart
+                chartId={arc}
+                serieData={serie}
+                arc={arc}
+                type='BAR'
+                comparation={label === 'comparation'}
+              />
             )}
           </div>
         ))}

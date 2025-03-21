@@ -15,8 +15,12 @@ import {
 import {
   getAllArcsChartInformation,
   getAllSagasChartInformation,
+  getSerieTotalTime,
   getTime,
 } from '@/helpers/time';
+
+import onePace from '@/assets/one_pace.json';
+import onePiece from '@/assets/one_piece.json';
 
 // Registrar elementos necesarios para Chart.js
 
@@ -41,9 +45,16 @@ interface PieChartProps {
   arc?: string;
   serieData: Serie;
   type: 'PIE' | 'BAR';
+  comparation: boolean;
 }
 
-const Chart: FC<PieChartProps> = ({ chartId, arc, serieData, type }) => {
+const Chart: FC<PieChartProps> = ({
+  chartId,
+  arc,
+  serieData,
+  type,
+  comparation,
+}) => {
   let labels: string[] = [];
   let data: number[] = [];
 
@@ -53,25 +64,46 @@ const Chart: FC<PieChartProps> = ({ chartId, arc, serieData, type }) => {
     ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
   }
 
-  if (!arc) {
+  if (!arc && !comparation) {
     const sagasChartInformation = getAllSagasChartInformation(serieData).sort(
       (a, b) => b.duration - a.duration,
     );
 
     labels = sagasChartInformation.map((saga) => saga.label);
     data = sagasChartInformation.map((saga) => saga.duration);
-  } else {
+  } else if (arc && !comparation) {
     const arcChartInformation = getAllArcsChartInformation(serieData, arc).sort(
       (a, b) => b.duration - a.duration,
     );
     labels = arcChartInformation.map((arc) => arc.label);
     data = arcChartInformation.map((arc) => arc.duration);
+  } else if (!arc && comparation) {
+    const totalOnePiece = getSerieTotalTime(onePiece);
+    const totalOnePace = getSerieTotalTime(onePace);
+    labels = ['One Piece', 'One Pace'];
+    data = [totalOnePiece, totalOnePace];
+  } else if (arc && comparation) {
+    console.log({ arc });
+    const sagasChartInformationOnePiece = getAllArcsChartInformation(
+      onePiece,
+      arc,
+    );
+    const sagasChartInformationOnePace = getAllArcsChartInformation(
+      onePace,
+      arc,
+    );
+    labels = [arc, arc];
+    data = [
+      sagasChartInformationOnePiece.reduce((acc, val) => acc + val.duration, 0),
+      sagasChartInformationOnePace.reduce((acc, val) => acc + val.duration, 0),
+    ];
   }
 
   const chartData = {
     labels: labels,
     datasets: [
       {
+        label: 'Duration',
         data: data,
         backgroundColor: COLORS,
       },
@@ -117,6 +149,8 @@ const Chart: FC<PieChartProps> = ({ chartId, arc, serieData, type }) => {
       },
     },
   };
+
+  console.log({ optios: { ...options, ...barOptions } });
 
   return type === 'PIE' ? (
     <Pie id={chartId} data={chartData} options={options} />
