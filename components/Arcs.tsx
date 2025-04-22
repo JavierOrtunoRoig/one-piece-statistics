@@ -13,23 +13,29 @@ import {
 
 const lastOnePace = latestJson as Serie;
 
+/**
+ * Retrieves the final merged One Pace JSON object.
+ *
+ * - If there's existing data in `localStorage`, it merges it with the latest JSON using `mergeJsons`.
+ * - The result is always saved back to `localStorage` under the key `'one_pace'`.
+ *
+ * @returns {Serie} The merged `Serie` object ready for application state use.
+ */
+const getFinalJson = (): Serie => {
+  let merge = lastOnePace;
+  if (typeof window !== 'undefined' && localStorage.getItem('one_pace')) {
+    const existingInfo = JSON.parse(localStorage.getItem('one_pace') as string);
+    merge = mergeJsons(lastOnePace, existingInfo);
+  }
+  localStorage.setItem('one_pace', JSON.stringify(merge));
+  return merge;
+};
+
 export const Arcs = () => {
   const [onePace, setOnePace] = useState<Serie | null>(null);
 
   useEffect(() => {
-    const getFinaljson = () => {
-      let merge = lastOnePace;
-      if (typeof window !== 'undefined' && localStorage.getItem('one_pace')) {
-        const existingInfo = JSON.parse(
-          localStorage.getItem('one_pace') as string,
-        );
-        merge = mergeJsons(lastOnePace, existingInfo);
-      }
-      localStorage.setItem('one_pace', JSON.stringify(merge));
-      return merge;
-    };
-
-    setOnePace(getFinaljson());
+    setOnePace(getFinalJson());
   }, []);
 
   if (!onePace) return <p>Loading...</p>;
