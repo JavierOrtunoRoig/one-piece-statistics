@@ -22,24 +22,6 @@ import {
 import onePace from '@/assets/one_pace.json';
 import onePiece from '@/assets/one_piece.json';
 
-// Registrar elementos necesarios para Chart.js
-
-const COLORS = [
-  '#FF6384',
-  '#36A2EB',
-  '#FFCE56',
-  '#4CAF50',
-  '#9966FF',
-  '#FF9F40',
-
-  '#2ECC71',
-  '#F39C12',
-  '#8E44AD',
-  '#E74C3C',
-  '#1ABC9C',
-  '#3498DB',
-];
-
 interface PieChartProps {
   chartId: string;
   arc?: string;
@@ -47,6 +29,19 @@ interface PieChartProps {
   type: 'PIE' | 'BAR';
   comparation: boolean;
 }
+
+ChartJS.register(
+  ArcElement,
+  BarElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+);
+
+const generateColors = (n: number): string[] => {
+  return Array.from({ length: n }, (_, i) => `hsl(${(i * 360) / n}, 70%, 60%)`);
+};
 
 const Chart: FC<PieChartProps> = ({
   chartId,
@@ -57,12 +52,6 @@ const Chart: FC<PieChartProps> = ({
 }) => {
   let labels: string[] = [];
   let data: number[] = [];
-
-  if (type === 'PIE') {
-    ChartJS.register(ArcElement, Tooltip, Legend);
-  } else {
-    ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
-  }
 
   if (!arc && !comparation) {
     const sagasChartInformation = getAllSagasChartInformation(serieData).sort(
@@ -105,7 +94,7 @@ const Chart: FC<PieChartProps> = ({
       {
         label: 'Duration',
         data: data,
-        backgroundColor: COLORS,
+        backgroundColor: generateColors(data.length),
       },
     ],
   };
@@ -149,8 +138,6 @@ const Chart: FC<PieChartProps> = ({
       },
     },
   };
-
-  console.log({ optios: { ...options, ...barOptions } });
 
   return type === 'PIE' ? (
     <Pie id={chartId} data={chartData} options={options} />
