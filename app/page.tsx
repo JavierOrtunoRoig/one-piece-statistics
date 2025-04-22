@@ -8,7 +8,7 @@ export default function Home() {
 
       <p className='text-sm text-gray-400'>
         A one piece episode has a duration of 22~24. I round to 23 minutes to do
-        next stadistics
+        next statistics
       </p>
 
       <div className='flex items-center justify-center gap-2 p-8'>

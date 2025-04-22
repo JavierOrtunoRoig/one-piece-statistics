@@ -8,6 +8,7 @@ import {
   getArcTotalTime,
   getSagaTotalTime,
   getSerieTotalTime,
+  sumDuration,
 } from './time'; // Asegúrate de que el path es correcto
 import mockData from './mockData.json';
 
@@ -127,5 +128,35 @@ describe('getSerieTotalTime', () => {
 
   it('should return 0 for an empty series', () => {
     expect(getSerieTotalTime({})).toBe(0);
+  });
+});
+
+describe('sumDuration', () => {
+  it('should return 0 for an empty array', () => {
+    expect(sumDuration([])).toBe(0);
+  });
+
+  it('should sum the durations of a single episode', () => {
+    const episodes: Episode[] = [
+      { title: 'Ep1', duration: 1200, watched: true },
+    ];
+    expect(sumDuration(episodes)).toBe(1200);
+  });
+
+  it('should sum the durations of multiple episodes', () => {
+    const episodes: Episode[] = [
+      { title: 'Ep1', duration: 600, watched: true },
+      { title: 'Ep2', duration: 1200, watched: false },
+      { title: 'Ep3', duration: 900, watched: true },
+    ];
+    expect(sumDuration(episodes)).toBe(2700);
+  });
+
+  it('should ignore the "watched" property and only sum duration', () => {
+    const episodes: Episode[] = [
+      { title: 'Ep1', duration: 300, watched: false },
+      { title: 'Ep2', duration: 400, watched: false },
+    ];
+    expect(sumDuration(episodes)).toBe(700);
   });
 });

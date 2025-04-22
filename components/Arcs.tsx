@@ -20,7 +20,9 @@ export const Arcs = () => {
     const getFinaljson = () => {
       let merge = lastOnePace;
       if (typeof window !== 'undefined' && localStorage.getItem('one_pace')) {
-        const existingInfo = JSON.parse(localStorage.getItem('one_pace') as string);
+        const existingInfo = JSON.parse(
+          localStorage.getItem('one_pace') as string,
+        );
         merge = mergeJsons(lastOnePace, existingInfo);
       }
       localStorage.setItem('one_pace', JSON.stringify(merge));
@@ -42,15 +44,24 @@ export const Arcs = () => {
       <div>
         <p className='text-sm text-gray-400'>2 arcs of 33 arcs processed</p>
         <p className='text-xs text-gray-400'>Total time: {totalTime}</p>
-        <p className='text-xs text-gray-400'>Watched time: {totalWatchedTime}</p>
-        <p className='text-xs text-gray-400'>Remaining time: {totalMissingTime}</p>
+        <p className='text-xs text-gray-400'>
+          Watched time: {totalWatchedTime}
+        </p>
+        <p className='text-xs text-gray-400'>
+          Remaining time: {totalMissingTime}
+        </p>
       </div>
       {Object.entries(onePace).map(([saga, arcs]) =>
         Object.entries(arcs).map(([arc, episodes], index) => {
           const isLastArc = Object.keys(arcs).length - 1 === index;
           return (
             <React.Fragment key={arc}>
-              <ArcInfo sagaTitle={saga} arcTitle={arc} episodes={episodes} setOnePace={setOnePace} />
+              <ArcInfo
+                sagaTitle={saga}
+                arcTitle={arc}
+                episodes={episodes}
+                setOnePace={setOnePace}
+              />
               {!isLastArc && <hr className='h-1 w-full' />}
             </React.Fragment>
           );

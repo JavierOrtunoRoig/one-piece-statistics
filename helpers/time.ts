@@ -1,8 +1,9 @@
-import { flatMapDeep } from 'lodash-es';
-
 type TimeOptions = {
   type: 'long' | 'short';
 };
+
+export const sumDuration = (episodes: Episode[]) =>
+  episodes.reduce((acc, ep) => acc + ep.duration, 0);
 
 export const getTime = (
   duration: number,
@@ -25,15 +26,13 @@ export const getTime = (
   }
 };
 
-export function flattenVideosObject<T>(
-  videos: Record<string, Record<string, T>>,
-): T[] {
-  return flatMapDeep(videos, (season) =>
-    flatMapDeep(season, (episodes) => episodes),
+export function flattenVideosObject(videos: Serie): Episode[] {
+  return Object.values(videos).flatMap((saga) =>
+    Object.values(saga).flatMap((arc) => arc),
   );
 }
 
-export const getArcTime = (arc: object) => {
+export const getArcTime = (arc: Episode[]) => {
   if (!arc) return;
   const totalArcDuration = Object.values(arc)
     .map((episode) => episode.duration)
@@ -41,24 +40,17 @@ export const getArcTime = (arc: object) => {
   return getTime(totalArcDuration);
 };
 
-export const getArcWatchedTime = (arc: object) => {
-  const totalArcDuration = Object.values(arc)
-    .filter((episode) => episode.watched)
-    .map((episode) => episode.duration)
-    .reduce((acc, curr) => acc + curr, 0);
-  return getTime(totalArcDuration);
+export const getArcWatchedTime = (arc: Episode[]) => {
+  const watched = Object.values(arc).filter((ep) => ep.watched);
+  return getTime(sumDuration(watched));
 };
 
-export const getArcRemainingTime = (arc: object) => {
-  const totalArcDuration = Object.values(arc)
-    .filter((episode) => !episode.watched)
-    .map((episode) => episode.duration)
-    .reduce((acc, curr) => acc + curr, 0);
-  return getTime(totalArcDuration);
+export const getArcRemainingTime = (arc: Episode[]) => {
+  const remaining = Object.values(arc).filter((ep) => !ep.watched);
+  return getTime(sumDuration(remaining));
 };
 
-export const getArcTotalTime = (arc: Episode[]) =>
-  arc.reduce((arcSum, episodes) => arcSum + episodes.duration, 0);
+export const getArcTotalTime = (arc: Episode[]) => sumDuration(arc);
 
 export const getSagaTotalTime = (saga: Arc) =>
   Object.values(saga).reduce(
