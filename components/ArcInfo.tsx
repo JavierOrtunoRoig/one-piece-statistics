@@ -5,9 +5,9 @@ import {
   getArcRemainingTime,
   getArcTime,
   getArcWatchedTime,
-  getTime,
 } from '../helpers/time';
 import { useOnePace } from '@/context/OnePaceContext';
+import { EpisodeCard } from './EpisodeCard';
 
 interface props {
   sagaTitle: string;
@@ -42,19 +42,8 @@ export const ArcInfo: FC<props> = ({ sagaTitle, arcTitle, episodes }) => {
         </div>
 
         <div className='flex flex-wrap gap-4'>
-          {episodes.map((info) => (
-            <div
-              key={info.title}
-              className='flex cursor-pointer flex-col'
-              onClick={() => handleToggle(info)}
-            >
-              <h2
-                className={`${info.watched ? 'text-green-400' : 'text-red-400'} text-xl font-bold transition-all duration-300`}
-              >
-                {info.title}
-              </h2>
-              <p className='text-xs text-gray-400'>{getTime(info.duration)}</p>
-            </div>
+          {episodes.map((ep) => (
+            <EpisodeCard key={ep.title} info={ep} onClick={handleToggle} />
           ))}
         </div>
       </div>
