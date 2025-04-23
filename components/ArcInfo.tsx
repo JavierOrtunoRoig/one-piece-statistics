@@ -1,36 +1,28 @@
-import type { FC } from 'react';
+'use client';
+
+import { FC } from 'react';
 import {
   getArcRemainingTime,
   getArcTime,
   getArcWatchedTime,
   getTime,
 } from '../helpers/time';
+import { useOnePace } from '@/context/OnePaceContext';
 
 interface props {
   sagaTitle: string;
   arcTitle: string;
   episodes: Episode[];
-  setOnePace: React.Dispatch<React.SetStateAction<Serie | null>>;
 }
 
-export const ArcInfo: FC<props> = ({
-  sagaTitle,
-  arcTitle,
-  episodes,
-  setOnePace,
-}) => {
-  const changeWatched = (info: Episode) => {
-    const onePace = JSON.parse(
-      localStorage.getItem('one_pace') as string,
-    ) as Serie;
-    const episode = onePace[sagaTitle][arcTitle].find(
-      ({ title }) => title === info.title,
-    );
-    if (!episode) throw new Error('Episode not found');
-    episode.watched = !episode?.watched;
+export const ArcInfo: FC<props> = ({ sagaTitle, arcTitle, episodes }) => {
+  const { dispatch } = useOnePace();
 
-    localStorage.setItem('one_pace', JSON.stringify(onePace));
-    setOnePace(onePace);
+  const handleToggle = (info: Episode) => {
+    dispatch({
+      type: 'TOGGLE_EPISODE',
+      payload: { saga: sagaTitle, arc: arcTitle, title: info.title },
+    });
   };
 
   return (
@@ -45,7 +37,7 @@ export const ArcInfo: FC<props> = ({
             Watched time: {getArcWatchedTime(episodes)}
           </p>
           <p className='text-xs text-gray-400'>
-            Reamining time: {getArcRemainingTime(episodes)}
+            Remaining time: {getArcRemainingTime(episodes)}
           </p>
         </div>
 
@@ -54,7 +46,7 @@ export const ArcInfo: FC<props> = ({
             <div
               key={info.title}
               className='flex cursor-pointer flex-col'
-              onClick={() => changeWatched(info)}
+              onClick={() => handleToggle(info)}
             >
               <h2
                 className={`${info.watched ? 'text-green-400' : 'text-red-400'} text-xl font-bold transition-all duration-300`}

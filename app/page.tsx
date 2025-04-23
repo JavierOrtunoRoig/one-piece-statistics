@@ -1,4 +1,4 @@
-import { Arcs } from '@/components/Arcs';
+import { ArcsWrapper } from '@/components/ArcsWrapper';
 import Link from 'next/link';
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
           One Pace Statistics
         </Link>
       </div>
-      <Arcs />
+      <ArcsWrapper />
     </div>
   );
 }
