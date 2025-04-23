@@ -1,6 +1,14 @@
-import Link from 'next/link';
 import React, { FC } from 'react';
 import Chart from './Chart';
+import { NavButton } from './NavButton';
+import {
+  BarChart2,
+  PieChart,
+  Home,
+  Shuffle,
+  Film,
+  FastForward,
+} from 'lucide-react';
 
 interface DisplayProps {
   serie: Serie;
@@ -9,45 +17,46 @@ interface DisplayProps {
 }
 
 const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
-  const anotherSerie = `/${label === 'one-piece' ? 'one-pace' : 'one-piece'}`;
   const currentSerie = `/${label}`;
-  const anotherSerieLabel = label === 'one-piece' ? 'One Pace' : 'One Piece';
 
   return (
     <>
-      <div className='flex items-center justify-center gap-2 p-8'>
-        <Link
-          href='/'
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          Home
-        </Link>
+      <div className='flex flex-wrap items-center justify-center gap-2 p-8'>
+        <NavButton href='/' icon={<Home size={16} />} label='Home' />
 
-        <Link
-          href={anotherSerie}
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          {anotherSerieLabel} Statistics
-        </Link>
+        <NavButton
+          href='/one-piece'
+          icon={<Film size={16} />}
+          label='One Piece Statistics'
+        />
 
-        <Link
-          href={'/comparation'}
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          Comparation Statistics
-        </Link>
+        <NavButton
+          href='/one-pace'
+          icon={<FastForward size={16} />}
+          label='One Pace Statistics'
+        />
 
-        {/* change chart type */}
-        <Link
+        <NavButton
+          href='/comparation'
+          icon={<Shuffle size={16} />}
+          label='Comparation Statistics'
+        />
+
+        <NavButton
           href={
             chartType === 'pie'
               ? `${currentSerie}?chartType=bar`
               : `${currentSerie}?chartType=pie`
           }
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          {chartType === 'pie' ? 'Bar Chart' : 'Pie Chart'}
-        </Link>
+          icon={
+            chartType === 'pie' ? (
+              <BarChart2 size={16} />
+            ) : (
+              <PieChart size={16} />
+            )
+          }
+          label={chartType === 'pie' ? 'Bar Chart' : 'Pie Chart'}
+        />
       </div>
       <div className='flex w-full flex-wrap justify-center gap-6'>
         <div className='w-full lg:w-5/12 xl:w-3/12'>

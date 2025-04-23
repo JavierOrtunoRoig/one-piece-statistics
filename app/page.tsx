@@ -1,31 +1,31 @@
 import { ArcsWrapper } from '@/components/ArcsWrapper';
-import Link from 'next/link';
+import { NavButton } from '@/components/NavButton';
+import { FastForward, Film } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className='flex h-full w-full flex-col items-center gap-8 p-4'>
       <h1 className='text-4xl font-bold'>One Pace</h1>
 
-      <p className='text-sm text-gray-400'>
-        A one piece episode has a duration of 22~24. I round to 23 minutes to do
-        next statistics
+      <p className='max-w-prose text-center text-sm text-gray-400'>
+        A One Piece episode usually lasts around 22-24 minutes. For statistics
+        purposes, I round them to 23 minutes per episode.
       </p>
 
-      <div className='flex items-center justify-center gap-2 p-8'>
-        <Link
+      <div className='flex flex-wrap items-center justify-center gap-2 p-8'>
+        <NavButton
           href='/one-piece'
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          One Piece Statistics
-        </Link>
+          icon={<Film size={16} />}
+          label='One Piece Statistics'
+        />
 
-        <Link
+        <NavButton
           href='/one-pace'
-          className='rounded-lg bg-violet-700 p-2 transition-all duration-300 hover:scale-110 hover:bg-violet-900'
-        >
-          One Pace Statistics
-        </Link>
+          icon={<FastForward size={16} />}
+          label='One Pace Statistics'
+        />
       </div>
+
       <ArcsWrapper />
     </div>
   );

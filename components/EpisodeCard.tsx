@@ -10,11 +10,14 @@ interface EpisodeCardProps {
 
 const EpisodeCardComponent: FC<EpisodeCardProps> = ({ info, onClick }) => {
   return (
-    <div className='flex cursor-pointer flex-col' onClick={() => onClick(info)}>
+    <div
+      onClick={() => onClick(info)}
+      className={`cursor-pointer rounded-xl border p-3 shadow transition-all duration-200 hover:scale-105 ${info.watched ? 'border-green-500 bg-green-900/20' : 'border-red-500 bg-red-900/10'}`}
+    >
       <h2
-        className={`${
+        className={`text-xl font-bold ${
           info.watched ? 'text-green-400' : 'text-red-400'
-        } text-xl font-bold transition-all duration-300`}
+        }`}
       >
         {info.title}
       </h2>

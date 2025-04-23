@@ -41,7 +41,7 @@ export const ArcInfo: FC<props> = ({ sagaTitle, arcTitle, episodes }) => {
           </p>
         </div>
 
-        <div className='flex flex-wrap gap-4'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {episodes.map((ep) => (
             <EpisodeCard key={ep.title} info={ep} onClick={handleToggle} />
           ))}
