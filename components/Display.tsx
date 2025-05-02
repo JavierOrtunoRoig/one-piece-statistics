@@ -18,10 +18,13 @@ interface DisplayProps {
 }
 
 const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
-  const currentSerie = `/${label}`;
+  const currentSerie = `/${label}-statistics`;
 
   return (
-    <>
+    <div className='flex flex-col items-center justify-center'>
+      <header className='flex w-full items-center justify-center p-4'>
+        <h1 className='text-4xl font-bold'>{`${label.split('-').join(' ').charAt(0).toUpperCase() + label.split('-').join(' ').slice(1)} Statistics`}</h1>
+      </header>
       <div className='flex flex-wrap items-center justify-center gap-2 p-8'>
         <NavButton href='/' icon={<Home size={16} />} label='Home' />
 
@@ -38,7 +41,7 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
         />
 
         <NavButton
-          href='/comparation'
+          href='/comparation-statistics'
           icon={<Shuffle size={16} />}
           label='Comparation Statistics'
         />
@@ -100,7 +103,7 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
