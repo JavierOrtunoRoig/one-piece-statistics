@@ -1,5 +1,4 @@
-'use client';
-
+import { Clock, Eye, Hourglass, ListChecks } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useOnePace } from '@/context/OnePaceContext';
 import {
@@ -10,6 +9,8 @@ import {
   getArcRemainingTime,
 } from '@/helpers/time';
 import { ArcInfo } from './ArcInfo';
+import { ProgressBar } from './ProgressBar';
+import { StatCard } from './StatCard';
 
 export const Arcs = () => {
   const { state: onePace } = useOnePace();
@@ -19,26 +20,51 @@ export const Arcs = () => {
     setHydrated(true);
   }, []);
 
-  if (!hydrated || !onePace) return null; // o <p>Loading...</p>
+  if (!hydrated || !onePace) return null;
 
   const flattenVideos = flattenVideosObject(onePace);
   const totalTime = getTime(getSerieTotalTime(onePace));
   const totalWatchedTime = getArcWatchedTime(flattenVideos);
   const totalMissingTime = getArcRemainingTime(flattenVideos);
 
+  const arcsWatched = Object.values(flattenVideos).filter(
+    (ep) => ep.watched,
+  ).length;
+  const totalEpisodes = flattenVideos.length;
+  const percentWatched =
+    totalEpisodes > 0 ? (arcsWatched / totalEpisodes) * 100 : 0;
+
   return (
-    <div className='flex w-full flex-col gap-4'>
-      <div>
-        <p className='text-sm text-gray-400'>2 arcs of 33 arcs processed</p>
-        <p className='text-xs text-gray-400'>Total time: {totalTime}</p>
-        <p className='text-xs text-gray-400'>
-          Watched time: {totalWatchedTime}
-        </p>
-        <p className='text-xs text-gray-400'>
-          Remaining time: {totalMissingTime}
-        </p>
+    <div className='flex w-full flex-col gap-6'>
+      <div className='rounded-xl border border-neutral-800 bg-neutral-900 p-5 shadow-md'>
+        <h2 className='mb-3 flex items-center gap-2 text-lg font-bold text-white'>
+          <ListChecks size={18} /> Progreso general
+        </h2>
+
+        <div className='flex flex-wrap gap-6 text-sm text-neutral-300'>
+          <StatCard
+            label='Total'
+            value={totalTime}
+            icon={<Clock size={16} />}
+          />
+          <StatCard
+            label='Visto'
+            value={totalWatchedTime}
+            icon={<Eye size={16} />}
+            className='text-green-400'
+          />
+          <StatCard
+            label='Restante'
+            value={totalMissingTime}
+            icon={<Hourglass size={16} />}
+            className='text-yellow-400'
+          />
+        </div>
+
+        <ProgressBar value={percentWatched} color='#22c55e' />
       </div>
 
+      {/* Lista de arcos */}
       {Object.entries(onePace).map(([saga, arcs]) =>
         Object.entries(arcs).map(([arc, episodes], index) => {
           const isLastArc = Object.keys(arcs).length - 1 === index;
