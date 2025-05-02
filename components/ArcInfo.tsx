@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import {
   getArcRemainingTime,
   getArcTime,
@@ -26,14 +26,23 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
   const remainingTime = getArcRemainingTime(episodes);
   const isCompleted = remainingTime === '0 minutes and 0 seconds';
 
-  const [isOpen, setIsOpen] = useState(!isCompleted);
-  const [ref, { height }] = useMeasure();
+  const isMounted = useRef(false);
+  const [isOpen, setIsOpen] = useState(true);
 
+  // Only sync with completion state on first mount
+  useEffect(() => {
+    if (!isMounted.current) {
+      setIsOpen(!isCompleted);
+      isMounted.current = true;
+    }
+  }, [isCompleted]);
+
+  const [ref, { height }] = useMeasure();
   const allWatched = episodes.every((ep) => ep.watched);
 
   const toggleAllEpisodes = () => {
+    const shouldBeWatched = !allWatched;
     episodes.forEach((ep) => {
-      const shouldBeWatched = !allWatched;
       if (ep.watched !== shouldBeWatched) {
         dispatch({
           type: 'TOGGLE_EPISODE',
@@ -91,28 +100,26 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
               icon={<Clock size={16} />}
             />
             <StatCard
-              label='Visto'
+              label='Watched'
               value={getArcWatchedTime(episodes)}
               icon={<Eye size={16} />}
               className='text-green-400'
             />
             <StatCard
-              label='Restante'
+              label='Remaining'
               value={remainingTime}
               icon={<Hourglass size={16} />}
               className='text-yellow-400'
             />
-          </div>
 
-          <div className='mb-4'>
-            <button
-              onClick={toggleAllEpisodes}
-              className='rounded-md bg-neutral-800 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700'
-            >
-              {!allWatched
-                ? 'Marcar todos como vistos'
-                : 'Marcar todos como no vistos'}
-            </button>
+            <div className='mb-4'>
+              <button
+                onClick={toggleAllEpisodes}
+                className='rounded-md bg-neutral-800 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700'
+              >
+                {!allWatched ? 'Mark all as watched' : 'Mark all as unwatched'}
+              </button>
+            </div>
           </div>
 
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>

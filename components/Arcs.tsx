@@ -38,7 +38,7 @@ export const Arcs = () => {
     <div className='flex w-full flex-col gap-6'>
       <div className='rounded-xl border border-neutral-800 bg-neutral-900 p-5 shadow-md'>
         <h2 className='mb-3 flex items-center gap-2 text-lg font-bold text-white'>
-          <ListChecks size={18} /> Progreso general
+          <ListChecks size={18} /> General Progress
         </h2>
 
         <div className='flex flex-wrap gap-6 text-sm text-neutral-300'>
@@ -48,13 +48,13 @@ export const Arcs = () => {
             icon={<Clock size={16} />}
           />
           <StatCard
-            label='Visto'
+            label='Watched'
             value={totalWatchedTime}
             icon={<Eye size={16} />}
             className='text-green-400'
           />
           <StatCard
-            label='Restante'
+            label='Remaining'
             value={totalMissingTime}
             icon={<Hourglass size={16} />}
             className='text-yellow-400'
