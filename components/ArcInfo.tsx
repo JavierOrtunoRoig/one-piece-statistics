@@ -93,33 +93,32 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
         className='overflow-hidden'
       >
         <div ref={ref} className='px-4 pb-4'>
-          <div className='mb-4 flex flex-wrap gap-6 text-sm text-neutral-300'>
-            <StatCard
-              label='Total'
-              value={getArcTime(episodes) as string}
-              icon={<Clock size={16} />}
-            />
-            <StatCard
-              label='Watched'
-              value={getArcWatchedTime(episodes)}
-              icon={<Eye size={16} />}
-              className='text-green-400'
-            />
-            <StatCard
-              label='Remaining'
-              value={remainingTime}
-              icon={<Hourglass size={16} />}
-              className='text-yellow-400'
-            />
-
-            <div className='mb-4'>
-              <button
-                onClick={toggleAllEpisodes}
-                className='rounded-md bg-neutral-800 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700'
-              >
-                {!allWatched ? 'Mark all as watched' : 'Mark all as unwatched'}
-              </button>
+          <div className='flex w-full items-start justify-between'>
+            <div className='mb-4 flex flex-wrap gap-6 text-sm text-neutral-300'>
+              <StatCard
+                label='Total'
+                value={getArcTime(episodes) as string}
+                icon={<Clock size={16} />}
+              />
+              <StatCard
+                label='Watched'
+                value={getArcWatchedTime(episodes)}
+                icon={<Eye size={16} />}
+                className='text-green-400'
+              />
+              <StatCard
+                label='Remaining'
+                value={remainingTime}
+                icon={<Hourglass size={16} />}
+                className='text-yellow-400'
+              />
             </div>
+            <button
+              onClick={toggleAllEpisodes}
+              className='rounded-md bg-neutral-800 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700'
+            >
+              {!allWatched ? 'Mark all as watched' : 'Mark all as unwatched'}
+            </button>
           </div>
 
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>

@@ -1,6 +1,6 @@
 import { ArcsWrapper } from '@/components/ArcsWrapper';
 import { NavButton } from '@/components/NavButton';
-import { FastForward, Film } from 'lucide-react';
+import { FastForward, Film, Shuffle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -23,6 +23,12 @@ export default function Home() {
           href='/one-pace'
           icon={<FastForward size={16} />}
           label='One Pace Statistics'
+        />
+
+        <NavButton
+          href='/comparation'
+          icon={<Shuffle size={16} />}
+          label='Comparation Statistics'
         />
       </div>
 
