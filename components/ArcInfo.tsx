@@ -8,9 +8,11 @@ import {
 } from '../helpers/time';
 import { useOnePace } from '@/context/OnePaceContext';
 import { EpisodeCard } from './EpisodeCard';
-import { Clock, Eye, Hourglass, ChevronDown, ChevronRight } from 'lucide-react';
+import { Clock, Eye, Hourglass, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { StatCard } from './StatCard';
+import { motion } from 'framer-motion';
+import useMeasure from 'react-use-measure';
 
 interface Props {
   sagaTitle: string;
@@ -25,6 +27,7 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
   const isCompleted = remainingTime === '0 minutes and 0 seconds';
 
   const [isOpen, setIsOpen] = useState(!isCompleted);
+  const [ref, { height }] = useMeasure();
 
   const handleToggle = (info: Episode) => {
     dispatch({
@@ -43,19 +46,26 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
         },
       )}
     >
-      {/* Header + toggle */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className='flex w-full cursor-pointer items-center justify-between p-4 text-left'
       >
         <h3 className='text-xl font-semibold text-white'>{arcTitle}</h3>
-        <div className='text-neutral-400'>
-          {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-        </div>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className='text-neutral-400'
+        >
+          <ChevronDown size={18} />
+        </motion.div>
       </button>
 
-      {isOpen && (
-        <div className='px-4 pb-4'>
+      <motion.div
+        animate={{ height: isOpen ? height : 0 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        className='overflow-hidden'
+      >
+        <div ref={ref} className='px-4 pb-4'>
           <div className='mb-4 flex flex-wrap gap-6 text-sm text-neutral-300'>
             <StatCard
               label='Total'
@@ -82,7 +92,7 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
             ))}
           </div>
         </div>
-      )}
+      </motion.div>
     </div>
   );
 };
