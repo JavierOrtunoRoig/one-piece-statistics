@@ -1,3 +1,5 @@
+// helpers/time.ts
+
 type TimeOptions = {
   type: 'long' | 'short';
 };

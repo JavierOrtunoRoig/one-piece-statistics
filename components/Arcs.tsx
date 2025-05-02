@@ -1,3 +1,4 @@
+// components/Arc.tsx
 'use client';
 
 import { Clock, Eye, Film, Hourglass, ListChecks } from 'lucide-react';

@@ -1,3 +1,4 @@
+// comparation/page.tsx
 import React from 'react';
 import onePiece from '@/assets/one_pace.json';
 import Display from '@/components/Display';

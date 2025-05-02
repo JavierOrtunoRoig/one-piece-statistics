@@ -1,3 +1,4 @@
+// components/Chart.tsx
 'use client';
 
 import React, { FC } from 'react';

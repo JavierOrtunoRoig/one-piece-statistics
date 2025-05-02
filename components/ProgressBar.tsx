@@ -1,3 +1,4 @@
+// components/ProgressBar.tsx
 'use client';
 
 import { FC } from 'react';

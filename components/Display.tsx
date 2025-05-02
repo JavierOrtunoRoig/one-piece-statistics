@@ -1,3 +1,4 @@
+// components/Display.tsx
 import React, { FC } from 'react';
 import Chart from './Chart';
 import { NavButton } from './NavButton';

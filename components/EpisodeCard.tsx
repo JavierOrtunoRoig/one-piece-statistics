@@ -1,3 +1,4 @@
+// components/EpisodeCard.tsx
 'use client';
 
 import { FC, memo } from 'react';

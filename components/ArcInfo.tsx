@@ -1,3 +1,4 @@
+// components/ArcInfo.tsx
 'use client';
 
 import { FC, useEffect, useRef, useState } from 'react';

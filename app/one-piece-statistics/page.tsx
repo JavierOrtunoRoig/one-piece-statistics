@@ -1,3 +1,4 @@
+// one-piece-statistics/page.tsx
 import React from 'react';
 import onePiece from '@/assets/one_piece.json';
 import Display from '@/components/Display';

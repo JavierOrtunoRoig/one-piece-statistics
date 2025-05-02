@@ -1,3 +1,4 @@
+// one-pace/page.tsx
 import { Arcs } from '@/components/Arcs';
 import { NavButton } from '@/components/NavButton';
 import { Film } from 'lucide-react';

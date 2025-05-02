@@ -1,3 +1,5 @@
+// one-pace-statistics/page.tsx
+
 import React from 'react';
 import onePace from '@/assets/one_pace.json';
 import Display from '@/components/Display';
