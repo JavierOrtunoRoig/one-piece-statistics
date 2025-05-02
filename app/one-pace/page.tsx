@@ -1,17 +1,33 @@
 // one-pace/page.tsx
 import { Arcs } from '@/components/Arcs';
 import { NavButton } from '@/components/NavButton';
-import { Film } from 'lucide-react';
+import { ExternalLink, Film } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className='flex h-full w-full flex-col items-center gap-8 p-4'>
-      <h1 className='text-4xl font-bold'>One Pace</h1>
+      <header className='flex w-full justify-between'>
+        <div className='w-[160px]'></div>
+        <Link
+          href='https://onepace.net/en'
+          target='_blank'
+          className='flex items-end gap-2'
+        >
+          <h1 className='text-4xl font-bold'>One Pace</h1>
+        </Link>
 
-      <p className='max-w-prose text-center text-sm text-gray-400'>
-        A One Piece episode usually lasts around 22-24 minutes. For statistics
-        purposes, I round them to 23 minutes per episode.
-      </p>
+        <Link
+          href='https://onepace.net/en'
+          target='_blank'
+          className='flex w-[160px] items-end gap-1 rounded-xl bg-gradient-to-r from-red-800 to-rose-700 px-4 py-2 text-sm font-bold text-white shadow-inner shadow-red-900 transition-all duration-300 hover:scale-[1.04] hover:from-rose-600 hover:to-red-700'
+        >
+          <h2 className='text-1xl'>Watch One pace</h2>
+          <div className='mb-0.5'>
+            <ExternalLink size={16} />
+          </div>
+        </Link>
+      </header>
 
       <div className='flex flex-wrap items-center justify-center gap-2 p-8'>
         <NavButton href='/' icon={<Film size={16} />} label='One Piece' />
