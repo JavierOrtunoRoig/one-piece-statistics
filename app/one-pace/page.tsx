@@ -7,14 +7,14 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className='flex h-full w-full flex-col items-center gap-8 p-4'>
-      <header className='flex w-full justify-between'>
+      <header className='flex w-full items-end justify-between'>
         <div className='w-[160px]'></div>
         <Link
           href='https://onepace.net/en'
           target='_blank'
           className='flex items-end gap-2'
         >
-          <h1 className='text-4xl font-bold'>One Pace Tracker</h1>
+          <h1 className='text-center text-4xl font-bold'>One Pace Tracker</h1>
         </Link>
 
         <Link

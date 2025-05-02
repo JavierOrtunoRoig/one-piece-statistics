@@ -7,7 +7,7 @@ import { Film } from 'lucide-react';
 export default function Home() {
   return (
     <div className='flex h-full w-full flex-col items-center gap-8 p-4'>
-      <h1 className='text-4xl font-bold'>One Piece Tracker</h1>
+      <h1 className='text-center text-4xl font-bold'>One Piece Tracker</h1>
 
       <div className='flex flex-wrap items-center justify-center gap-2 p-8'>
         <NavButton
