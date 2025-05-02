@@ -66,7 +66,7 @@ export const Arcs = () => {
           />
         </div>
 
-        <ProgressBar value={percentWatched} color='#22c55e' />
+        <ProgressBar value={percentWatched} />
       </div>
 
       {/* Lista de arcos */}
