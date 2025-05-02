@@ -1,4 +1,4 @@
-import { Clock, Eye, Hourglass, ListChecks } from 'lucide-react';
+import { Clock, Eye, Film, Hourglass, ListChecks } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useOnePace } from '@/context/OnePaceContext';
 import {
@@ -58,6 +58,11 @@ export const Arcs = () => {
             value={totalMissingTime}
             icon={<Hourglass size={16} />}
             className='text-yellow-400'
+          />
+          <StatCard
+            label='Episodes watched'
+            value={`${arcsWatched} / ${totalEpisodes} - ${percentWatched.toFixed(2)}%`}
+            icon={<Film size={16} />}
           />
         </div>
 
