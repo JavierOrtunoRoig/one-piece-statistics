@@ -6,13 +6,13 @@ import {
   getArcTime,
   getArcWatchedTime,
 } from '../helpers/time';
-import { useOnePace } from '@/context/OnePaceContext';
 import { EpisodeCard } from './EpisodeCard';
 import { Clock, Eye, Hourglass, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 import { StatCard } from './StatCard';
 import { motion } from 'framer-motion';
 import useMeasure from 'react-use-measure';
+import { useSerieProgress } from '@/context/SerieContext';
 
 interface Props {
   sagaTitle: string;
@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
-  const { dispatch } = useOnePace();
+  const { dispatch } = useSerieProgress();
 
   const remainingTime = getArcRemainingTime(episodes);
   const isCompleted = remainingTime === '0 minutes and 0 seconds';

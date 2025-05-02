@@ -14,7 +14,6 @@ export const onePaceReducer = (state: Serie, action: Action): Serie => {
       if (!episode) return state;
 
       episode.watched = !episode.watched;
-      localStorage.setItem('one_pace', JSON.stringify(newState));
 
       return newState;
     }

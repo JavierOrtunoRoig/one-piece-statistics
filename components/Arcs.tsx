@@ -1,6 +1,7 @@
+'use client';
+
 import { Clock, Eye, Film, Hourglass, ListChecks } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { useOnePace } from '@/context/OnePaceContext';
 import {
   flattenVideosObject,
   getTime,
@@ -11,9 +12,10 @@ import {
 import { ArcInfo } from './ArcInfo';
 import { ProgressBar } from './ProgressBar';
 import { StatCard } from './StatCard';
+import { useSerieProgress } from '@/context/SerieContext';
 
 export const Arcs = () => {
-  const { state: onePace } = useOnePace();
+  const { state: onePace } = useSerieProgress();
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {

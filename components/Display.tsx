@@ -25,13 +25,13 @@ const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
         <NavButton href='/' icon={<Home size={16} />} label='Home' />
 
         <NavButton
-          href='/one-piece'
+          href='/one-piece-statistics'
           icon={<Film size={16} />}
           label='One Piece Statistics'
         />
 
         <NavButton
-          href='/one-pace'
+          href='/one-pace-statistics'
           icon={<FastForward size={16} />}
           label='One Pace Statistics'
         />
