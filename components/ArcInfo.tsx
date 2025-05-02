@@ -29,6 +29,24 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
   const [isOpen, setIsOpen] = useState(!isCompleted);
   const [ref, { height }] = useMeasure();
 
+  const allWatched = episodes.every((ep) => ep.watched);
+
+  const toggleAllEpisodes = () => {
+    episodes.forEach((ep) => {
+      const shouldBeWatched = !allWatched;
+      if (ep.watched !== shouldBeWatched) {
+        dispatch({
+          type: 'TOGGLE_EPISODE',
+          payload: {
+            saga: sagaTitle,
+            arc: arcTitle,
+            title: ep.title,
+          },
+        });
+      }
+    });
+  };
+
   const handleToggle = (info: Episode) => {
     dispatch({
       type: 'TOGGLE_EPISODE',
@@ -84,6 +102,17 @@ export const ArcInfo: FC<Props> = ({ sagaTitle, arcTitle, episodes }) => {
               icon={<Hourglass size={16} />}
               className='text-yellow-400'
             />
+          </div>
+
+          <div className='mb-4'>
+            <button
+              onClick={toggleAllEpisodes}
+              className='rounded-md bg-neutral-800 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-neutral-700'
+            >
+              {!allWatched
+                ? 'Marcar todos como vistos'
+                : 'Marcar todos como no vistos'}
+            </button>
           </div>
 
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
