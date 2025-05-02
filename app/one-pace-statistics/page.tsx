@@ -5,13 +5,13 @@ import onePace from '@/assets/one_pace.json';
 import Display from '@/components/Display';
 
 interface PageProps {
-  searchParams?: {
+  searchParams: Promise<{
     chartType?: 'pie' | 'bar';
-  };
+  }>;
 }
 
-const Page = ({ searchParams }: PageProps) => {
-  const chartType = searchParams?.chartType || 'pie';
+const Page = async (props: PageProps) => {
+  const { chartType } = await props.searchParams;
 
   return <Display serie={onePace} label='one-pace' chartType={chartType} />;
 };

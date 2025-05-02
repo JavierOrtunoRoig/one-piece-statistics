@@ -14,7 +14,7 @@ import {
 interface DisplayProps {
   serie: Serie;
   label: 'one-piece' | 'one-pace' | 'comparation';
-  chartType: 'bar' | 'pie';
+  chartType: 'bar' | 'pie' | undefined;
 }
 
 const Display: FC<DisplayProps> = ({ serie, label, chartType = 'pie' }) => {
