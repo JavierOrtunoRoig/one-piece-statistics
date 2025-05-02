@@ -14,6 +14,13 @@ import { ProgressBar } from './ProgressBar';
 import { StatCard } from './StatCard';
 import { useSerieProgress } from '@/context/SerieContext';
 
+type ArcEntry = {
+  saga: string;
+  arc: string;
+  episodes: Episode[];
+  isCompleted: boolean;
+};
+
 export const Arcs = () => {
   const { state: onePace } = useSerieProgress();
   const [hydrated, setHydrated] = useState(false);
@@ -35,6 +42,22 @@ export const Arcs = () => {
   const totalEpisodes = flattenVideos.length;
   const percentWatched =
     totalEpisodes > 0 ? (arcsWatched / totalEpisodes) * 100 : 0;
+
+  // Convert and flatten to sortable list of arcs
+  const arcEntries: ArcEntry[] = [];
+
+  for (const [saga, arcs] of Object.entries(onePace)) {
+    for (const [arc, episodes] of Object.entries(arcs)) {
+      const isCompleted = episodes.every((ep) => ep.watched);
+      arcEntries.push({ saga, arc, episodes, isCompleted });
+    }
+  }
+
+  // Incomplete arcs first
+  const sortedArcs = arcEntries.sort((a, b) => {
+    if (a.isCompleted === b.isCompleted) return 0;
+    return a.isCompleted ? 1 : -1; // completed go last
+  });
 
   return (
     <div className='flex w-full flex-col gap-6'>
@@ -71,18 +94,15 @@ export const Arcs = () => {
         <ProgressBar value={percentWatched} />
       </div>
 
-      {/* Lista de arcos */}
-      {Object.entries(onePace).map(([saga, arcs]) =>
-        Object.entries(arcs).map(([arc, episodes], index) => {
-          const isLastArc = Object.keys(arcs).length - 1 === index;
-          return (
-            <React.Fragment key={arc}>
-              <ArcInfo sagaTitle={saga} arcTitle={arc} episodes={episodes} />
-              {!isLastArc && <hr className='h-1 w-full' />}
-            </React.Fragment>
-          );
-        }),
-      )}
+      {sortedArcs.map(({ saga, arc, episodes }, index) => {
+        const isLastArc = index === sortedArcs.length - 1;
+        return (
+          <React.Fragment key={`${saga}-${arc}`}>
+            <ArcInfo sagaTitle={saga} arcTitle={arc} episodes={episodes} />
+            {!isLastArc && <hr className='h-1 w-full' />}
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 };
